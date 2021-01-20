@@ -142,7 +142,7 @@ func newBccspMsp(version MSPVersion) (MSP, error) {
 	return theMsp, nil
 }
 
-func (msp *bccspmsp) getCertFromPem(idBytes []byte) (*sm2.Certificate, error) {
+func (msp *bccspmsp) getCertFromPem(idBytes []byte) (*x509.Certificate, error) {
 	if idBytes == nil {
 		return nil, errors.New("getCertFromPem error: nil idBytes")
 	}
