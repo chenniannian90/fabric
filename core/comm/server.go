@@ -12,7 +12,6 @@ import (
 	"errors"
 	"fmt"
 	"github.com/tjfoc/gmsm/x509"
-	"github.com/tjfoc/gmsm/sm2"
 	tls "github.com/tjfoc/gmtls"
 	"net"
 	"sync"
@@ -116,7 +115,7 @@ func NewGRPCServerFromListener(listener net.Listener, serverConfig ServerConfig)
 				//if we have client root CAs, create a certPool
 				if len(secureConfig.ClientRootCAs) > 0 {
 					grpcServer.clientRootCAs = make(map[string]*x509.Certificate)
-					grpcServer.tls.config.ClientCAs =  sm2.NewCertPool()
+					grpcServer.tls.config.ClientCAs =  x509.NewCertPool()
 					for _, clientRootCA := range secureConfig.ClientRootCAs {
 						err = grpcServer.appendClientRootCA(clientRootCA)
 						if err != nil {
