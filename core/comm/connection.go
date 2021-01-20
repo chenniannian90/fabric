@@ -21,7 +21,7 @@ import (
 	"github.com/hyperledger/fabric/common/flogging"
 	"github.com/hyperledger/fabric/core/config"
 	tls "github.com/tjfoc/gmtls"
-	"github.com/tjfoc/gmsm/gmtls/gmcredentials"
+	"github.com/tjfoc/gmtls/gmcredentials"
 	"github.com/tjfoc/gmsm/x509"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
